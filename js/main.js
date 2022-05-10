@@ -40,7 +40,7 @@ const persona3 = new Persona("Juan", "Ferretto", 20);
 persona3.mostrarPersona(); */
 
 
-class Persona{
+/* class Persona{
 
     constructor(nombre, apellido, edad){
         this.nombre = nombre;
@@ -82,4 +82,29 @@ for(let i = 1; i <= cuantasPersonas; i++){
         alert("Sos menor de edad");
     }
     
+} */
+
+class Cliente{
+    constructor(nombre, presupuesto, tarjetaDescuento, numeroTel){
+        this.nombre = nombre;
+        this.presupuesto = presupuesto;
+        this.tarjetaDescuento = tarjetaDescuento;
+        this.numeroTel = numeroTel;
+    }
+
+    transferirDinero(valor){
+
+        if(valor <= this.presupuesto){
+            alert(`El presupuesto es mayor al valor, por lo tanto te alcanza. Sobra: $ ${this.presupuesto - valor}`);
+        }else{
+            alert(`El presupuesto es menor al valor, por lo tanto NO te alcanza. Faltan: $ ${valor - this.presupuesto}`);
+        }
+    }
 }
+
+
+const cliente1 = new Cliente("Juan", 150000, true, 2325436210);
+
+let montoGastado = Number(prompt("Cual es el monto gastado?"));
+
+cliente1.transferirDinero(montoGastado);
